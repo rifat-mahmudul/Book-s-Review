@@ -1,8 +1,12 @@
+import { Outlet } from "react-router-dom";
+import Nav from "../Components/Nav";
+
 function Root() {
 
   return (
     <>
-      <h1>This is Root Components</h1>
+      <Nav></Nav>
+      <Outlet></Outlet>
     </>
   )
 }
