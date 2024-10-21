@@ -6,14 +6,14 @@ const BookDetails = () => {
     const {id} = useParams();
     const book = books?.find(book => book.bookId == id);
 
-    const {bookId, bookName, author, image, rating, review, tags, publisher, totalPages, yearOfPublishing} = book;
+    const {bookName, author, image, rating, review, tags, publisher, totalPages, yearOfPublishing} = book;
 
     console.log(book)
 
     return (
         <section className="pb-16">
             <div className="max-w-[90%] xl:max-w-[1200px] flex flex-col justify-center items-center mx-auto sm:py-12 lg:py-8 lg:flex-row lg:justify-around">
-                <div className="bg-gray-100 p-20 xl:p-24 mb-10 lg:mb-0">
+                <div className="bg-gray-100 p-20 xl:p-24 mb-10 lg:mb-0 rounded-xl">
                     <img src={image} className="h-72 w-full sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                 </div>
                 <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
@@ -38,6 +38,7 @@ const BookDetails = () => {
                     <p className="mb-5">Rating : <span className="font-bold">{rating}</span></p>
                     <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
                         <Link className="px-8 py-3 text-lg font-semibold rounded border border-black">Read</Link>
+
                         <Link className="px-8 py-3 text-lg font-semibold border rounded bg-sky-600 text-white">Wishlist</Link>
                     </div>
                 </div>
