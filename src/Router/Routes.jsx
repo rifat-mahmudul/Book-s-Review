@@ -5,6 +5,7 @@ import Root from "../Layouts/Root";
 import Home from "../Pages/Home";
 import ListBooks from "../Pages/ListBooks";
 import PagesRead from "../Pages/PagesRead";
+import BookDetails from "../Components/BookDetails";
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ export const router = createBrowserRouter([
             {
                 path : "/pageRead",
                 element : <PagesRead></PagesRead>,
+            },
+            {
+                path : "/book/:id",
+                element : <BookDetails></BookDetails>,
+                loader : () => fetch(`/Data.json`)
             },
         ]
     },

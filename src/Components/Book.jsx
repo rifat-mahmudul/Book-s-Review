@@ -4,12 +4,10 @@ import { Link } from 'react-router-dom';
 
 const Book = ({book}) => {
 
-    const {bookName, author, image, rating, category} = book;
-
-    console.log(book);
+    const {bookId, bookName, author, image, rating, category} = book;
 
     return (
-        <Link className='p-4 border border-gray-300 shadow-lg rounded-lg hover:scale-105 transition'>
+        <Link to={`/book/${bookId}`} className='p-4 border border-gray-300 shadow-lg rounded-lg hover:scale-105 transition'>
             <div className='bg-gray-100 p-5 rounded-lg'>
                 <img src={image} className='h-[150px]  mx-auto' alt="" />
             </div>
