@@ -1,9 +1,17 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import { getBooks } from "../Utils";
 
 const ListBooks = () => {
 
     const [index, setIndex] = useState(0);
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        setBooks(getBooks());
+    }, [])
+
+    console.log(books)
 
     return (
         <div className="max-w-[90%] xl:max-w-[1200px] mx-auto">

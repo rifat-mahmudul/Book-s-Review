@@ -1,4 +1,5 @@
 import { Link, useLoaderData, useParams } from "react-router-dom"
+import { saveBooks, saveWishlist } from "../Utils";
 
 const BookDetails = () => {
 
@@ -8,7 +9,13 @@ const BookDetails = () => {
 
     const {bookName, author, image, rating, review, tags, publisher, totalPages, yearOfPublishing} = book;
 
-    console.log(book)
+    const handleRead = (book) =>{
+        saveBooks(book);
+    };
+
+    const handleWishlist = (book) => {
+        saveWishlist(book);
+    }
 
     return (
         <section className="pb-16">
@@ -37,9 +44,9 @@ const BookDetails = () => {
                     <p className="mb-3">Year of publishing : <span className="font-bold">{yearOfPublishing}</span></p>
                     <p className="mb-5">Rating : <span className="font-bold">{rating}</span></p>
                     <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                        <Link className="px-8 py-3 text-lg font-semibold rounded border border-black">Read</Link>
+                        <Link onClick={()=>handleRead(book)} className="px-8 py-3 text-lg font-semibold rounded border border-black">Read</Link>
 
-                        <Link className="px-8 py-3 text-lg font-semibold border rounded bg-sky-600 text-white">Wishlist</Link>
+                        <Link onClick={() => handleWishlist(book)} className="px-8 py-3 text-lg font-semibold border rounded bg-sky-600 text-white">Wishlist</Link>
                     </div>
                 </div>
             </div>
