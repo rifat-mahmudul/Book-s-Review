@@ -11,6 +11,16 @@ export const getBooks = () => {
     return books;
 }
 
+export const getWishlist = () => {
+    let wishlist = [];
+    const storedBooks = localStorage.getItem('wishlist');
+    if(storedBooks){
+        wishlist = JSON.parse(storedBooks);
+    }
+
+    return wishlist;
+}
+
 //saveRead Functionality
 export const saveBooks = book => {
     let books = getBooks();
@@ -26,7 +36,7 @@ export const saveBooks = book => {
 
 //saveWishlist functionality
 export const saveWishlist = book => {
-    let wishlist = getBooks();
+    let wishlist = getWishlist();
     const isExist = wishlist.find(b => b.bookId === book.bookId);
     if(isExist){
         return toast.error('Already Read')
