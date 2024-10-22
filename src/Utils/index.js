@@ -37,8 +37,10 @@ export const saveBooks = book => {
 //saveWishlist functionality
 export const saveWishlist = book => {
     let wishlist = getWishlist();
+    let books = getBooks();
+    const isExist2 = books.find(b => b.bookId === book.bookId);
     const isExist = wishlist.find(b => b.bookId === book.bookId);
-    if(isExist){
+    if(isExist || isExist2){
         return toast.error('Already Read')
     }
 
