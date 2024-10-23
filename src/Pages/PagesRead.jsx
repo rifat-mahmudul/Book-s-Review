@@ -1,5 +1,6 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { getBooks } from '../Utils';
 
 const PagesRead = () => {
 
@@ -50,6 +51,13 @@ const PagesRead = () => {
             },
     ];
 
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        setBooks(getBooks());
+        console.log(getBooks());
+    }, [])
+
     const getPath = (x, y, width, height) => {
             return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
             ${x + width / 2}, ${y}
@@ -77,7 +85,7 @@ const PagesRead = () => {
                 }}
                 >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
+                <XAxis dataKey="name"  />
                 <YAxis />
                 <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
                     {data.map((entry, index) => (
