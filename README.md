@@ -24,4 +24,4 @@ Welcome to **Book's Review** – a modern and interactive platform for book enth
 
 ## 🌐 Live Demo
 
-Experience the live version of the BPL DREAM 11 website: []
+Experience the live version of the BPL DREAM 11 website: [https://booksreview.surge.sh/]
