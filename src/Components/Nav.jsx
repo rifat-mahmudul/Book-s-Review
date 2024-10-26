@@ -23,8 +23,8 @@ const Nav = () => {
                     </NavLink>
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex gap-5">
-                    <button className="self-center px-8 py-3 rounded bg-green-500 hover:bg-green-700 transition-[0.5s] font-semibold text-white">Sign in</button>
-                    <button className="self-center px-8 py-3 font-semibold rounded bg-sky-500 hover:bg-sky-700 transition-[0.5s] text-white">Sign up</button>
+                    <Link to='/signIn' className="self-center px-8 py-3 rounded bg-green-500 hover:bg-green-700 transition-[0.5s] font-semibold text-white">Sign in</Link>
+                    <Link to='/signUp' className="self-center px-8 py-3 font-semibold rounded bg-sky-500 hover:bg-sky-700 transition-[0.5s] text-white">Sign up</Link>
                 </div>
                 <div className="lg:hidden">
                     <CiMenuFries size={20} />
